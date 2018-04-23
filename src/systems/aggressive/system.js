@@ -53,14 +53,8 @@ class AggressiveSystem {
 
       // create stimulants
       for (i = 0, max = (0.01 * world1.bounds[1]); i < max; i += 1) {
-        Brait.Stimulus.create(
-          null,
-          new Burner.Vector(
-            getRandomNumber(0, world1.width),
-            getRandomNumber(0, world1.height)
-          ),
-          [Brait.Light]
-        );
+        Brait.Stimulus.create(null, new Burner.Vector(getRandomNumber(0, world1.width),
+            getRandomNumber(0, world1.height)), [Brait.Light]);
       }
 
       // add event listener to create random stimulant on mouseup

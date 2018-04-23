@@ -8,6 +8,7 @@ import Section from '../components/section';
 
 // Systems
 import Aggressive from '../systems/aggressive';
+import Centralised from '../systems/centralised';
 
 export const HomePageTemplate = ({
   title,
@@ -38,7 +39,7 @@ export const HomePageTemplate = ({
       </Helmet>
       <main>
         <Section fullWidth={false} themeNumber={0}>
-          <Aggressive />
+          <Centralised />
           <PageContent className='content' content={content} />
         </Section>
       </main>

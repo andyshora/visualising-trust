@@ -3346,7 +3346,7 @@ THE SOFTWARE.
 /* global Flora, Burner, document, setTimeout */
 /** @namespace */
 var Brait = {}, exports = Brait;
-console.log('Braitenberg');
+
 (function(exports) {
 
   'use strict';
