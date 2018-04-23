@@ -20,8 +20,8 @@ class Centralised extends Component {
   componentDidMount() {
     this.system = new CentralisedSystem({
       container: this._container,
-      width: 500,
-      height: 500
+      width: 800,
+      height: 800
     });
   }
   render() {
