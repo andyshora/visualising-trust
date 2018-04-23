@@ -25,10 +25,10 @@ THE SOFTWARE.
 /* Version: 1.0.0 */
 /* Build time: September 10, 2013 11:55:33 */
 
-/*global Flora, Burner, document, setTimeout */
+/* global Flora, Burner, document, setTimeout */
 /** @namespace */
 var Brait = {}, exports = Brait;
-
+console.log('Braitenberg');
 (function(exports) {
 
   'use strict';

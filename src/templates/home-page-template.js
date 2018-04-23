@@ -6,6 +6,9 @@ import { withPrefix } from 'gatsby-link';
 import Content, { HTMLContent } from '../components/content';
 import Section from '../components/section';
 
+// Systems
+import Aggressive from '../systems/aggressive';
+
 export const HomePageTemplate = ({
   title,
   content,
@@ -27,9 +30,15 @@ export const HomePageTemplate = ({
         <meta property='og:type' content={openGraph.type} />
         <meta property='og:url' content={openGraph.url} />
         <meta property='og:image' content={openGraph.image} />
+        <link href={withPrefix('demo/css/Burner.min.css')} />
+        <link href={withPrefix('demo/css/Flora.min.css')} />
+        <link href={withPrefix('demo/css/braitenberg.css')} />
+        <script src={withPrefix('demo/js/Burner.min.js')} />
+        <script src={withPrefix('demo/js/Flora.js')} />
       </Helmet>
       <main>
         <Section fullWidth={false} themeNumber={0}>
+          <Aggressive />
           <PageContent className='content' content={content} />
         </Section>
       </main>

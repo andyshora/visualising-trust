@@ -35,6 +35,7 @@ module.exports = {
     'no-confusing-arrow': 'off',
     'no-underscore-dangle': 'off',
     'no-else-return': 'off',
+    'no-undef': 'off',
     'operator-linebreak': ['error', 'before'],
     'react/jsx-boolean-value': ['off'],
     'react/jsx-closing-bracket-location': [2, { 'selfClosing': 'after-props', 'nonEmpty': 'after-props' }],
@@ -52,7 +53,10 @@ module.exports = {
     'describe': true,
     'it': true,
     'documentRef': true,
-    'graphql': true
+    'graphql': true,
+    'Flora': true,
+    'Burner': true,
+    'Brait': true
   },
   'env': {
     'browser': true,
