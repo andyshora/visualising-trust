@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: "static/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "src/pages/index.md"
+        label: "Home"
+        name: "home"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "home-page"}
+          - {label: "Meta Tag Title", name: "metaTitle", widget: "string"}
+          - {label: "Meta Tag Keywords", name: "metaKeywords", widget: "string"}
+          - {label: "Meta Tag Description", name: "metaDescription", widget: "string"}
+          - {label: "Open Graph Title", name: "openGraphTitle", widget: "string"}
+          - {label: "Open Graph Description", name: "openGraphDescription", widget: "string"}
+          - {label: "Open Graph Type", name: "openGraphType", widget: "string"}
+          - {label: "Open Graph URL", name: "openGraphUrl", widget: "string"}
+          - {label: "Open Graph Image", name: "openGraphImage", widget: "image"}
+          - {label: "Body", name: "body", widget: "markdown"}
