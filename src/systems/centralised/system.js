@@ -417,6 +417,22 @@ class CentralisedSystem {
 
     Burner.System.init(function() {
 
+      this.add('Stimulus', {
+        type: 'heat',
+        draggable: false,
+        location: new Burner.Vector(world.width * 0.5, world.height * 0.5),
+        mass: 5,
+        width: 200,
+        height: 200,
+        opacity: 0.5,
+        color: [0, 255, 235],
+        bordercolor: [[0, 255, 235]],
+        boxShadowColor: [[0, 255, 235]],
+        borderWidth: 2,
+        boxShadowSpread: 0,
+        borderStyle: 'none'
+      });
+
       const people = _.times(20).map(i => {
         const walker = this.add('Animal', {
           name: 'Victim',
@@ -426,13 +442,21 @@ class CentralisedSystem {
           height: 8,
           width: 8,
           borderRadius: 4,
-          location: new Burner.Vector(world.width / 2, world.height / 2),
+          location: new Burner.Vector(0, 0),
           velocity: new Burner.Vector(Flora.Utils.getRandomNumber(0, 2, true), Flora.Utils.getRandomNumber(0, 2, true)),
           maxSpeed: Flora.Utils.getRandomNumber(3, 7, true),
           perlinAccelHigh: 0.75,
           perlinAccelLow: -0.75,
           checkWorldEdges: true,
-          wrapWorldEdges: true
+          wrapWorldEdges: true,
+          sensors: [
+            this.add('Sensor', {
+              type: 'heat',
+              behavior: 'EXPLORER',
+              sensitivity: 0.001,
+              visibility: 'hidden'
+            })
+          ]
         });
         return walker;
       });
@@ -458,12 +482,17 @@ class CentralisedSystem {
               type: 'victim',
               behavior: 'AGGRESSIVE',
               sensitivity: 5,
-              displayRange: true,
-              displayConnector: true,
+              displayRange: false,
+              displayConnector: false,
               visibility: 'hidden',
               rangeDisplayBorderStyle: 'none',
               rangeDisplayBorderDefaultColor: [255, 0, 0],
               activatedColor: [255, 0, 0]
+            }),
+            this.add('Sensor', {
+              type: 'heat',
+              behavior: 'COWARD',
+              sensitivity: 0.1
             })
           ]
         });
